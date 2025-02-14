@@ -13,7 +13,7 @@ class Ventana:
         self.CentrarVentana(ancho, alto)
 
         # Crear el Canvas
-        self.crear_canvas(ancho, alto)
+        self.CrearCanvas(ancho, alto)
 
         #Llamar al método para iniciar la ventana
         self.Iniciar()
