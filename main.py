@@ -21,6 +21,7 @@ class Ventana:
 
         # Vincular las teclas del teclado a la función manejar_tecla del jugador
         self.ventana.bind("<KeyPress>", self.jugador.Manejar_Tecla)
+        self.ventana.bind("<KeyRelease>", self.jugador.Soltar_Tecla)  # Para manejar la tecla soltada
 
         # Llamar al método de actualización
         self.Actualizar()
@@ -46,6 +47,8 @@ class Ventana:
         self.canvas.pack()  # Agregar el Canvas a la ventana
     
     def Actualizar(self):
+        # Mover al jugador
+        self.jugador.Mover()
         # Programar la próxima actualización
         self.ventana.after(16, self.Actualizar) # Aproximadamente 60 FPS
     
