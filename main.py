@@ -1,4 +1,5 @@
 import tkinter as tk
+from jugador import Jugador
 
 class Ventana:
     def __init__(self, ancho, alto):
@@ -14,6 +15,9 @@ class Ventana:
 
         # Crear el Canvas
         self.CrearCanvas(ancho, alto)
+
+        # Crear el jugador
+        self.jugador = Jugador(self.canvas, "imagenes/jugador.png", 100,100)
 
         #Llamar al método para iniciar la ventana
         self.Iniciar()
