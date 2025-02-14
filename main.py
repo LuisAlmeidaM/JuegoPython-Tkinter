@@ -19,6 +19,12 @@ class Ventana:
         # Crear el jugador
         self.jugador = Jugador(self.canvas, "imagenes/jugador.png", 100,100)
 
+        # Vincular las teclas del teclado a la función manejar_tecla del jugador
+        self.ventana.bind("<KeyPress>", self.jugador.Manejar_Tecla)
+
+        # Llamar al método de actualización
+        self.Actualizar()
+
         #Llamar al método para iniciar la ventana
         self.Iniciar()
 
@@ -38,6 +44,10 @@ class Ventana:
         # Crear un Canvas con fondo verde
         self.canvas = tk.Canvas(self.ventana, width=ancho, height=alto, bg="green")
         self.canvas.pack()  # Agregar el Canvas a la ventana
+    
+    def Actualizar(self):
+        # Programar la próxima actualización
+        self.ventana.after(16, self.Actualizar) # Aproximadamente 60 FPS
     
     def Iniciar(self):
         self.ventana.mainloop() # Iniciar el bucle principal de la ventana
