@@ -12,6 +12,9 @@ class Ventana:
         # Centrar la ventana
         self.CentrarVentana(ancho, alto)
 
+        # Crear el Canvas
+        self.crear_canvas(ancho, alto)
+
         #Llamar al método para iniciar la ventana
         self.Iniciar()
 
@@ -27,6 +30,11 @@ class Ventana:
         # Establecer la posición de la pantalla
         self.ventana.geometry(f"{ancho}x{alto}+{x}+{y}")
 
+    def CrearCanvas(self,ancho, alto):
+        # Crear un Canvas con fondo verde
+        self.canvas = tk.Canvas(self.ventana, width=ancho, height=alto, bg="green")
+        self.canvas.pack()  # Agregar el Canvas a la ventana
+    
     def Iniciar(self):
         self.ventana.mainloop() # Iniciar el bucle principal de la ventana
 
